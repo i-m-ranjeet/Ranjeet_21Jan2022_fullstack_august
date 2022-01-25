@@ -1,17 +1,19 @@
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import Cartitems from "./Cartitems";
 import Message from "./Message";
 import Nav from "./Nav";
 import Products from "./Products";
+import Promos from "./Promos";
 
 function Home() {
-    const data = useSelector(state=>state.show_msg)
+    // const data = useSelector(state=>state.show_msg)
   return (
       <>
       <Nav/>
       <Products/>
       <Cartitems/>
       <Message/>
+      <Promos/>
         {/* <table>
           <tbody>
           <tr>

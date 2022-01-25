@@ -12,6 +12,7 @@ class Products(models.Model):
 class Promotions(models.Model):
     code = models.CharField(max_length=20)
     discount = models.IntegerField()
+    minimum_purchase = models.IntegerField()
     description = models.CharField(max_length=120)
 
     def __str__(cls):

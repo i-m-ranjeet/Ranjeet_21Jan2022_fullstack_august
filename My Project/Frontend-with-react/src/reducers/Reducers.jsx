@@ -1,12 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
-import axios from 'axios';
 
 const initialState = {
   products: [],
   cartlist: [],
+  show_cart: "-100%",
+  promotions:[],
+  promoapprovel:false,
+  show_promos:"-100%",
+  discount:0,
   message: "",
-  show_msg: false,
-  show_cart: "-100%"
+  // show_msg: false,
 }
 
 export const checkoutSlice = createSlice({
@@ -27,16 +30,34 @@ export const checkoutSlice = createSlice({
     } 
     },
     setShow_cart: (state) => {
-      if (state.show_cart == "0%"){
+      if (state.show_cart === "0%"){
         state.show_cart = "-100%"
       }else{
         state.show_cart = "0%"
       }
     },
+    setMessage:(state, action)=>{
+      state.message = action.payload 
+    },
+    addToPromotions:(state, action)=>{
+      state.promotions = action.payload.data
+    },
+    setShow_promos:(state)=>{
+      if (state.show_promos === "-100%"){
+        state.show_promos = "0"
+      }else{
+        state.show_promos = "-100%"
+      }
+    },
+    setPromoapproval:(state, action)=>{
+      state.promoapprovel = state.promotions.filter((promo)=>promo.code === action.payload).length?true:false
+      state.discount = state.promotions.filter((promo)=>promo.code === action.payload).length?
+      state.promotions.filter((promo)=>promo.code === action.payload)[0].discount:0
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setProducts, addToCart, setShow_cart } = checkoutSlice.actions
+export const { setProducts, addToCart, setShow_cart,setShow_promos, setMessage, addToPromotions, setPromoapproval } = checkoutSlice.actions
 
 export default checkoutSlice.reducer

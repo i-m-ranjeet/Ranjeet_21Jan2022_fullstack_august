@@ -55,3 +55,13 @@ def remove(request, courseid=None):
     for product in all:
         data.update({product.course_id:product.quantity})
     return JsonResponse(data=data)
+
+
+
+
+def promos(request):
+    all = models.Promotions.objects.all()
+    data = []
+    for promo in all:
+        data.append({"code":promo.code, "discount":promo.discount, "description": promo.description})
+    return JsonResponse(data={"data":data})
