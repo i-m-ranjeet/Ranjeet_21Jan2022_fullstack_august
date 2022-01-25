@@ -1,11 +1,17 @@
 import { useSelector } from "react-redux";
+import Cartitems from "./Cartitems";
+import Message from "./Message";
 import Nav from "./Nav";
-function Home() {
-  const count = useSelector((state) => state.checkout)
+import Products from "./Products";
 
+function Home() {
+    const data = useSelector(state=>state.show_msg)
   return (
       <>
       <Nav/>
+      <Products/>
+      <Cartitems/>
+      <Message/>
         {/* <table>
           <tbody>
           <tr>
