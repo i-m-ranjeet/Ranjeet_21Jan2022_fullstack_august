@@ -1,0 +1,50 @@
+####################     SINGLE CHECKOUT PAGE        #############################
+
+	This Project is created by using ReactJS as Frontend and DjangoPython as Backend
+
+	In Backend ./Backend-with-django/ i created an django app named as products, i created Three Models(tables) for products, promocodes and one for cart Items.
+	for perform some useful actions from frontend to backend I have created some views, for adding items to cart and remove item from cart, for increase or decrease the quantity in cart and 
+	for get the products  list
+
+
+	folder structure:----
+	
+	My Project/
+		/Backend-with-django/
+				/products/
+				/Single_Checkout_page/
+
+		/Frontend-with-react/src
+				/components/
+				/store/
+				/reducers/
+
+
+####################      DEPENDENCIES     ################################
+
+	There are some Dependencies for BACKEND:-
+
+						asgiref==3.4.1
+						Django==4.0.1
+						django-cors-headers==3.11.0
+						sqlparse==0.4.2
+						tzdata==2021.5
+
+	There are some Dependencies for FRONTEND:-
+
+						@"reduxjs/toolkit": "^1.7.1"
+						@"axios": "^0.25.0"
+						@"react-redux": "^7.2.6"
+
+###################      HOW THE PROJECT WORKS     #######################
+
+>>>	In project there is a NAVBAR that have a logo with some text, a button for check the availabe PROMOCODES and a cart button for view the cart items,
+	whenever you clickend on the cart button the cart items renders to the screen.
+
+>>>	there are some products listed and every product have a little UI to represent itself, whenever you make Hover on any product an "add to cart" button will comes there.
+
+>>>	there is a notifiction system also, whenever you add an item to cart or delete from cart, copying a promocode , that will comes to screen and notify you that your action is performed or not.
+
+>>>	in your cart list you can increase or decrease you items quantities, you can apply Promocode, promocode will work if the required conditions are followed.
+
+>>>	if there is a issue to applying the PROMOCODE an error will renderd over there
