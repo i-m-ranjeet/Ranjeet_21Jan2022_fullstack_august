@@ -8,6 +8,8 @@ const initialState = {
   promoapprovel:false,
   show_promos:"-100%",
   discount:0,
+  min_purchase:0,
+  totalpurchase:0,
   message: "",
   // show_msg: false,
 }
@@ -22,11 +24,13 @@ export const checkoutSlice = createSlice({
     },
     addToCart: (state, action) => {
       state.cartlist = []
+      state.totalpurchase = 0
       for (const key in action.payload) {
         let obj ={}
         obj.course_name =key
         obj.quantity =  action.payload[key]
         state.cartlist.push(obj);
+        // state.totalpurchase = state.totalpurchase + obj
     } 
     },
     setShow_cart: (state) => {
@@ -50,14 +54,19 @@ export const checkoutSlice = createSlice({
       }
     },
     setPromoapproval:(state, action)=>{
-      state.promoapprovel = state.promotions.filter((promo)=>promo.code === action.payload).length?true:false
-      state.discount = state.promotions.filter((promo)=>promo.code === action.payload).length?
-      state.promotions.filter((promo)=>promo.code === action.payload)[0].discount:0
-    }
+      let promo = state.promotions.filter((promo)=>promo.code === action.payload)
+      state.promoapprovel = promo.length?true:false
+      state.discount = promo.length?
+      promo[0].discount:0
+      state.min_purchase = promo.length?
+      promo[0].minimum_purchase:0
+      // state.message =  state.promoapprovel?state.totalpurchase>state.min_purchase?"state.message":"":""
+    },
+
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setProducts, addToCart, setShow_cart,setShow_promos, setMessage, addToPromotions, setPromoapproval } = checkoutSlice.actions
+export const { setProducts, addToCart, setShow_cart, setShow_promos, setMessage, addToPromotions, setPromoapproval } = checkoutSlice.actions
 
 export default checkoutSlice.reducer

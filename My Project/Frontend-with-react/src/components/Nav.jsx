@@ -17,7 +17,9 @@ useEffect(() => {
   return (
   <>
     <nav className="navbar">
-      <h1 className="checkoutheading">Single Checkout Page</h1>
+      <h1 className="checkoutheading">
+         <div>Single Checkout Page</div>
+         <i class="fas fa-money-check-alt"></i></h1>
       <ul className="navlist">
         <li className="promocodes" onClick={()=>dispatch(setShow_promos())}>Promo Codes</li>
         <li className="cart" onClick={()=>dispatch(setShow_cart())}>

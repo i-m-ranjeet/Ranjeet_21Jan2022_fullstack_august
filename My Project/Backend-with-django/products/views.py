@@ -41,6 +41,15 @@ def all(request):
         data.update({product.course_id:product.quantity})
     return JsonResponse(data=data)
 
+def delete(request, courseid = None):
+    get_item = models.Cart.objects.get(course_id = courseid)
+    get_item.delete()
+
+    all = models.Cart.objects.all()
+    data = {}
+    for product in all:
+        data.update({product.course_id:product.quantity})
+    return JsonResponse(data=data)
 
 def remove(request, courseid=None):
     get_item = models.Cart.objects.get(course_id = courseid)
@@ -63,5 +72,5 @@ def promos(request):
     all = models.Promotions.objects.all()
     data = []
     for promo in all:
-        data.append({"code":promo.code, "discount":promo.discount, "description": promo.description})
+        data.append({"code":promo.code, "discount":promo.discount, "description": promo.description, "minimum_purchase": promo.minimum_purchase})
     return JsonResponse(data={"data":data})

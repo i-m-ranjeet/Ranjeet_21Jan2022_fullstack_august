@@ -19,7 +19,7 @@ function Message() {
     }, [data.message]);
     
   return (
-        <div className="message" key={cart_quantity}>
+        <div className="message" key={cart_quantity+data.message}>
             {msg}
         </div>
     );
