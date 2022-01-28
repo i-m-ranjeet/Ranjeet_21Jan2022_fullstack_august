@@ -2,10 +2,11 @@
 	
 	before starting the project make sure you have installed Dependencies for backend and for frontend also
 	
-	start server for backend first, at the location at ./Backend-with-django/   ____# pip install -r requirements.txt
-										    ____# python manage.py runserver
-	start server for frontend as well, at the location at ./Frontend-with-react/ ___# npm install
-										     ___# npm start
+	install dependencies that necessary for backend    ./Backend-with-django/   ____# pip install -r requirements.txt
+	start server for backend 						    ____# python manage.py runserver
+	install dependencies that necessary for frontend      ./Frontend-with-react/ ___# npm install
+	start server for frontend as well					     ___# npm start
+								
 
 
 
