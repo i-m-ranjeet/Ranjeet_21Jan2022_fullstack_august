@@ -1,3 +1,31 @@
+######################   START PROJECT    ##############################
+	
+	before starting the project make sure you have installed Dependencies for backend and for frontend also
+	
+	start server for backend first, at the location at ./Backend-with-django/   ____# pip install -r requirements.txt
+										    ____# python manage.py runserver
+	start server for frontend as well, at the location at ./Frontend-with-react/ ___# npm install
+										     ___# npm start
+
+
+
+####################      DEPENDENCIES     ################################
+
+	There are some Dependencies for BACKEND:-
+
+						asgiref==3.4.1
+						Django==4.0.1
+						django-cors-headers==3.11.0
+						sqlparse==0.4.2
+						tzdata==2021.5
+
+	There are some Dependencies for FRONTEND:-
+
+						@"reduxjs/toolkit": "^1.7.1"
+						@"axios": "^0.25.0"
+						@"react-redux": "^7.2.6"
+
+
 ####################     SINGLE CHECKOUT PAGE        #############################
 
 	This Project is created by using ReactJS as Frontend and DjangoPython as Backend
@@ -19,22 +47,6 @@
 				/store/
 				/reducers/
 
-
-####################      DEPENDENCIES     ################################
-
-	There are some Dependencies for BACKEND:-
-
-						asgiref==3.4.1
-						Django==4.0.1
-						django-cors-headers==3.11.0
-						sqlparse==0.4.2
-						tzdata==2021.5
-
-	There are some Dependencies for FRONTEND:-
-
-						@"reduxjs/toolkit": "^1.7.1"
-						@"axios": "^0.25.0"
-						@"react-redux": "^7.2.6"
 
 ###################      HOW THE PROJECT WORKS     #######################
 
